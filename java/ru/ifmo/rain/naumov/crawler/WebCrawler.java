@@ -1,6 +1,9 @@
 package ru.ifmo.rain.naumov.crawler;
-
-import info.kgeorgiy.java.advanced.crawler.*;
+import ru.ifmo.rain.naumov.crawler.crawler.Result;
+import ru.ifmo.rain.naumov.crawler.downloader.CachingDownloader;
+import ru.ifmo.rain.naumov.crawler.downloader.Document;
+import ru.ifmo.rain.naumov.crawler.downloader.Downloader;
+import ru.ifmo.rain.naumov.crawler.downloader.URLUtils;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -8,7 +11,7 @@ import java.util.*;
 import java.util.concurrent.*;
 
 
-public class WebCrawler implements Crawler {
+public class WebCrawler implements ru.ifmo.rain.naumov.crawler.crawler.Crawler {
     private final static int BASE_DOWNLOADER_COUNT = 32;
     private final static int BASE_EXTRACTOR_COUNT = 32;
     private final static int BASE_LIMIT_PER_HOST = 32;
@@ -129,7 +132,7 @@ public class WebCrawler implements Crawler {
     }
 
     @Override
-    public Result download(String url, int depth) {
+    public ru.ifmo.rain.naumov.crawler.crawler.Result download(String url, int depth) {
         final Set<String> resultPages = ConcurrentHashMap.newKeySet();
         final Map<String, IOException> errors = new ConcurrentHashMap<>();
         final Set<String> used = ConcurrentHashMap.newKeySet();

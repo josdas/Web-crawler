@@ -2,6 +2,8 @@ package ru.ifmo.rain.naumov.crawler.downloader;
 
 import ru.ifmo.rain.naumov.crawler.crawler.PageCollector;
 import ru.ifmo.rain.naumov.crawler.crawler.WebLinksProcessing;
+import ru.ifmo.rain.naumov.crawler.downloader.Downloader;
+import ru.ifmo.rain.naumov.crawler.downloader.Document;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
